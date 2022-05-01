@@ -53,4 +53,4 @@ docker rm [CONTAINER ID]
 docker rmi [IMAGE ID]
 
 ⑤イメージ、コンテナ等のDockerオブジェクトを全て削除
-docker system prune -w
+docker system prune -a
