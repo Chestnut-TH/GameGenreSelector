@@ -33,6 +33,31 @@ spring_projectフォルダ内のものを準備する
     (2) npm run serve
     (3) http://localhost:9000/にアクセスする(docker-compose.ymlの設定に異なる)
 
+
+手順⑤Vue Routerの追加
+    (1) npm install vue-router@4
+    (2) vue.config.jsの修正 (EsLintの対策)
+        lintOnSave: false
+    (3) router.jsの追加 (フォルダ構成やファイル名は任意でOK)
+    (4) src/main.jsの修正
+        import router from './router/router.js' (追加)
+        import { createApp } from 'vue' (追加)
+        // createApp(App).mount('#app')
+        // new Vue({
+        //     router,
+        //     render: function (h) { return h(App) },
+        // }).$mount('#app') (削除)
+
+        createApp(App).use(router).mount('#app') (追加)
+    
+
+
+手順⑥BootStrapの追加
+    (1) npm install vue bootstrap-vue bootstrap
+    (2) src/main.jsにbootstrapをimportする
+        import "bootstrap/dist/css/bootstrap.min.css"
+        import "bootstrap/dist/js/bootstrap.js"
+
 その他
 ①停止しているコンテナの一覧表示
     docker ps -a
