@@ -6,6 +6,7 @@
         -vue
     -spring_project
     -vue_project
+        -gitkeep
     -README
 
 手順①:Dockerfileやdocekr-compose.ymlの作成(必要な設定ファイル等の作成)
@@ -57,6 +58,9 @@ spring_projectフォルダ内のものを準備する
     (2) src/main.jsにbootstrapをimportする
         import "bootstrap/dist/css/bootstrap.min.css"
         import "bootstrap/dist/js/bootstrap.js"
+
+手順⑦axios追加
+    (1) npm install axios
 
 その他
 ①停止しているコンテナの一覧表示

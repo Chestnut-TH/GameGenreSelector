@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import Hello from '../pages/hello/Hello.vue'
+import Select from '../pages/main/Select.vue'
 
 
 const routes = [
@@ -15,7 +16,9 @@ const routes = [
         component: Hello
     },
     {
-
+        path: '/select', 
+        name: 'Select',
+        component: Select
     }
 ]
 
