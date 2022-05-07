@@ -62,6 +62,14 @@ spring_projectフォルダ内のものを準備する
 手順⑦axios追加
     (1) npm install axios
 
+手順⑧DBの設定
+    (1) docker-compose exec mysql /bin/bash
+    (2) mysql -h 127.0.0.1 -P 3306 -uroot -proot
+    (3) show databases;
+    (4) use mysqldb;
+    (5) source /docker-entrypoint-initdb.d/init.sql;
+    (6) show tables;
+
 その他
 ①停止しているコンテナの一覧表示
     docker ps -a
@@ -83,3 +91,22 @@ docker rmi [IMAGE ID]
 
 ⑤イメージ、コンテナ等のDockerオブジェクトを全て削除
 docker system prune -a
+
+⑥再度UP
+docker-compose down
+docker-compose up -d
+
+※注意
+application.propertiesのspring.datasource.urlをlocalhost(127.0.0.1)を
+指定してもコンテナが違うため指定するPortが異なる
+以下のコマンドでPortを確認する
+(1)docker-compose exec mysql /bin/bash
+(2)cat /etc/hosts
+    127.0.0.1	localhost
+    ::1	localhost ip6-localhost ip6-loopback
+    fe00::0	ip6-localnet
+    ff00::0	ip6-mcastprefix
+    ff02::1	ip6-allnodes
+    ff02::2	ip6-allrouters
+    172.27.0.3	05e44bbd80f1
+(3)(2)の結果の場合は172.27.0.3がPortとなる

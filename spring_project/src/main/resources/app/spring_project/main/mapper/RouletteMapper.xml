@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="app.spring_project.main.mapper.RouletteMapper">
+	<!--↓ interfaceで指定した変数名と一致させる。-->
+    <select id="selectGenre" resultType="app.spring_project.main.accessors.GenreEntity">
+        SELECT id, genre FROM genres
+    </select>
+    <select id="selectTarget" resultType="app.spring_project.main.accessors.TargetEntity">
+        SELECT id, target FROM targets
+    </select>
+    <select id="selectFeature" resultType="app.spring_project.main.accessors.FeatureEntity">
+        SELECT id, feature FROM features
+    </select>
+</mapper>

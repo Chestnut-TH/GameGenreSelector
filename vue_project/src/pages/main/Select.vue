@@ -31,16 +31,7 @@
     export default {
         data(){
             return{
-                items: [
-                    {   
-                        no:"",
-                        genre: '',
-                        target: '',
-                        feature1: '',
-                        feature2: '',
-                        feature3: ''
-                    },
-                ]
+                items: []
             }
         },
         methods: {
